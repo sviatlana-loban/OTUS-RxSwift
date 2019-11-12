@@ -85,17 +85,32 @@
             </objects>
             <point key="canvasLocation" x="1644" y="923"/>
         </scene>
-        <!--View Controller-->
+        <!--Label View Controller-->
         <scene sceneID="Srz-m1-vFa">
             <objects>
-                <viewController id="8kx-YQ-hdp" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="labelViewController" id="8kx-YQ-hdp" customClass="LabelViewController" customModule="OTUS_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MmX-R0-xgU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzR-ji-LdO">
+                                <rect key="frame" x="181" y="435" width="52.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="KzR-ji-LdO" firstAttribute="centerY" secondItem="MmX-R0-xgU" secondAttribute="centerY" id="KBW-Nb-2eD"/>
+                            <constraint firstItem="KzR-ji-LdO" firstAttribute="centerX" secondItem="MmX-R0-xgU" secondAttribute="centerX" id="Yhm-Wf-hSO"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Gjv-Qs-uK7"/>
                     </view>
                     <navigationItem key="navigationItem" id="O4V-lb-KaW"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="KzR-ji-LdO" id="l7m-gn-4h8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fj-Nd-9HM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

@@ -13,6 +13,7 @@
 		843899B8237AA96700248147 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843899B6237AA96700248147 /* LaunchScreen.storyboard */; };
 		843899C3237AB2FD00248147 /* Table1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899C2237AB2FD00248147 /* Table1ViewController.swift */; };
 		843899C5237AB30B00248147 /* Table2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899C4237AB30B00248147 /* Table2ViewController.swift */; };
+		843899C7237AC87A00248147 /* LabelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899C6237AC87A00248147 /* LabelViewController.swift */; };
 		CE9F50E8B462685E6B3AE087 /* Pods_OTUS_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB2A6FC02DCA773DBBAADF6 /* Pods_OTUS_RxSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		843899B9237AA96700248147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843899C2237AB2FD00248147 /* Table1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table1ViewController.swift; sourceTree = "<group>"; };
 		843899C4237AB30B00248147 /* Table2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table2ViewController.swift; sourceTree = "<group>"; };
+		843899C6237AC87A00248147 /* LabelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelViewController.swift; sourceTree = "<group>"; };
 		E385D077B2A14195EEB4B236 /* Pods-OTUS+RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTUS+RxSwift.release.xcconfig"; path = "Target Support Files/Pods-OTUS+RxSwift/Pods-OTUS+RxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -94,6 +96,7 @@
 			children = (
 				843899C2237AB2FD00248147 /* Table1ViewController.swift */,
 				843899C4237AB30B00248147 /* Table2ViewController.swift */,
+				843899C6237AC87A00248147 /* LabelViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				843899AC237AA96500248147 /* AppDelegate.swift in Sources */,
 				843899C5237AB30B00248147 /* Table2ViewController.swift in Sources */,
 				843899C3237AB2FD00248147 /* Table1ViewController.swift in Sources */,
+				843899C7237AC87A00248147 /* LabelViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
