@@ -8,10 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		843899AC237AA96500248147 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899AB237AA96500248147 /* AppDelegate.swift */; };
-		843899B0237AA96500248147 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899AF237AA96500248147 /* ViewController.swift */; };
 		843899B3237AA96500248147 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843899B1237AA96500248147 /* Main.storyboard */; };
 		843899B5237AA96700248147 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843899B4237AA96700248147 /* Assets.xcassets */; };
 		843899B8237AA96700248147 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843899B6237AA96700248147 /* LaunchScreen.storyboard */; };
+		843899C3237AB2FD00248147 /* Table1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899C2237AB2FD00248147 /* Table1ViewController.swift */; };
+		843899C5237AB30B00248147 /* Table2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899C4237AB30B00248147 /* Table2ViewController.swift */; };
 		CE9F50E8B462685E6B3AE087 /* Pods_OTUS_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB2A6FC02DCA773DBBAADF6 /* Pods_OTUS_RxSwift.framework */; };
 /* End PBXBuildFile section */
 
@@ -20,11 +21,12 @@
 		77B02164417DD54834CB6983 /* Pods-OTUS+RxSwift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTUS+RxSwift.debug.xcconfig"; path = "Target Support Files/Pods-OTUS+RxSwift/Pods-OTUS+RxSwift.debug.xcconfig"; sourceTree = "<group>"; };
 		843899A8237AA96500248147 /* OTUS+RxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OTUS+RxSwift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		843899AB237AA96500248147 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		843899AF237AA96500248147 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		843899B2237AA96500248147 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		843899B4237AA96700248147 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		843899B7237AA96700248147 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		843899B9237AA96700248147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		843899C2237AB2FD00248147 /* Table1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table1ViewController.swift; sourceTree = "<group>"; };
+		843899C4237AB30B00248147 /* Table2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table2ViewController.swift; sourceTree = "<group>"; };
 		E385D077B2A14195EEB4B236 /* Pods-OTUS+RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTUS+RxSwift.release.xcconfig"; path = "Target Support Files/Pods-OTUS+RxSwift/Pods-OTUS+RxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -61,9 +63,9 @@
 		843899AA237AA96500248147 /* OTUS+RxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				843899C1237AB2CE00248147 /* Controllers */,
 				843899C0237AAEEC00248147 /* Storyboards */,
 				843899AB237AA96500248147 /* AppDelegate.swift */,
-				843899AF237AA96500248147 /* ViewController.swift */,
 				843899BF237AAED600248147 /* SupportFiles */,
 			);
 			path = "OTUS+RxSwift";
@@ -85,6 +87,15 @@
 				843899B6237AA96700248147 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		843899C1237AB2CE00248147 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				843899C2237AB2FD00248147 /* Table1ViewController.swift */,
+				843899C4237AB30B00248147 /* Table2ViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		DC3DCB2804CCD8461F24FB51 /* Frameworks */ = {
@@ -219,8 +230,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843899B0237AA96500248147 /* ViewController.swift in Sources */,
 				843899AC237AA96500248147 /* AppDelegate.swift in Sources */,
+				843899C5237AB30B00248147 /* Table2ViewController.swift in Sources */,
+				843899C3237AB2FD00248147 /* Table1ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
