@@ -34,9 +34,6 @@ class Table1ViewController: UIViewController {
     }
 
     func bind() {
-//        let search = self.viewModel.news
-//            .asDriver(onErrorJustReturn: [])
-//            .skip(1)
         let searchInput = Observable.just("Trump")
 
         searchInput.subscribe(onNext: { value in
@@ -46,7 +43,8 @@ class Table1ViewController: UIViewController {
 
         viewModel.news.bind(to:
         tableView.rx.items(cellIdentifier: cellIdentifier)) { row, element, cell in
-            cell.textLabel?.text = "\(element) \(row)"
+            cell.textLabel?.text = "\(element.title)"
+            cell.detailTextLabel?.text = "\(element.publisher)"
         }.disposed(by: disposeBag)
 
         tableView.rx.modelSelected(String.self)

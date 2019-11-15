@@ -14,20 +14,20 @@ class NewsViewModel {
     private let disposeBag = DisposeBag()
     private let newsService = NewsApiService()
 
-    private(set) var news: BehaviorRelay<[News.Article]> = BehaviorRelay(value: [])
+    private(set) var news: BehaviorRelay<[ArticleViewModel]> = BehaviorRelay(value: [])
 
     func requestNews(for value: String) {
         self.newsService.search(value: value)
+            .map{ articles in
+                var articleDescriptions = [ArticleViewModel]()
+                for article in articles {
+                    articleDescriptions.append(ArticleViewModel(title: article.title ?? "", publisher: article.source.name ?? ""))
+                }
+                return articleDescriptions
+        }
             .asDriver(onErrorJustReturn: [])
+//            .map{News.Article -> ArticleViewModel article in return ArticleViewModel(title: $0., publisher: <#T##String#>) }
             .drive(news)
             .disposed(by: disposeBag)
     }
-
-//    func requestWeather(at location: CLLocationCoordinate2D) {
-//        self.weatherService.weather(at: location)
-//            .asDriver(onErrorJustReturn: .empty)
-//            .drive(weather)
-//            .disposed(by: disposeBag)
-//    }
-
 }
