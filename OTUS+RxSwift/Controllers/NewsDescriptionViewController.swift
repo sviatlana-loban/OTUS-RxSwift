@@ -1,5 +1,5 @@
 //
-//  LabelViewController.swift
+//  NewsDescriptionViewController.swift
 //  OTUS+RxSwift
 //
 //  Created by Sviatlana Loban on 11/12/19.
@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class LabelViewController: UIViewController {
+class NewsDescriptionViewController: UIViewController {
 
     var viewModel: NewsDescriptionViewModel!
     @IBOutlet weak var infoLabel: UILabel!
@@ -27,10 +27,9 @@ class LabelViewController: UIViewController {
     }
 
     func bind() {
+
         viewModel.title.bind(to: infoLabel.rx.text).disposed(by: disposeBag)
-
         viewModel.description.bind(to: newsDescription.rx.text).disposed(by: disposeBag)
-
         viewModel.image.bind(to: newsImage.rx.image)
     }
 }

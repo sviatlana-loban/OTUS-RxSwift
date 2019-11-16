@@ -85,10 +85,10 @@
             </objects>
             <point key="canvasLocation" x="1644" y="923"/>
         </scene>
-        <!--Label View Controller-->
+        <!--News Description View Controller-->
         <scene sceneID="Srz-m1-vFa">
             <objects>
-                <viewController storyboardIdentifier="labelViewController" id="8kx-YQ-hdp" customClass="LabelViewController" customModule="OTUS_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="labelViewController" id="8kx-YQ-hdp" customClass="NewsDescriptionViewController" customModule="OTUS_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MmX-R0-xgU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -36,7 +36,7 @@ class Table2ViewController: UIViewController {
         tableView.rx.modelSelected(String.self)
         .subscribe(onNext: { [unowned self] item in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let labelViewController = storyboard.instantiateViewController(withIdentifier: "labelViewController") as! LabelViewController
+            let labelViewController = storyboard.instantiateViewController(withIdentifier: "labelViewController") as! NewsDescriptionViewController
             //labelViewController.info = item
             self.navigationController?.pushViewController(labelViewController, animated: true)
         }).disposed(by: disposeBag)
