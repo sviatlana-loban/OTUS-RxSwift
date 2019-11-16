@@ -8,8 +8,4 @@
 
 import Foundation
 
-struct ArticleViewModel {
-    var title: String
-    var publisher: String
-    //var imageName: String
-}
+

@@ -1,5 +1,5 @@
 //
-//  Table1ViewController.swift
+//  SearchNewsViewController.swift
 //  OTUS+RxSwift
 //
 //  Created by Sviatlana Loban on 11/12/19.
@@ -10,48 +10,47 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class Table1ViewController: UIViewController {
+class SearchNewsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+
     let disposeBag = DisposeBag()
-    let cellIdentifier = "table1Cell"
     let viewModel = NewsViewModel()
-
-    let items = Observable.just([
-        "First Item",
-        "Second Item",
-        "Third Item",
-        "Fourth Item",
-        "Fifth Item",
-        "Sixth Item",
-        "Seventh Item",
-    ])
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Table 1"
+        self.title = "Search news"
+
+        tableView.register(
+            UINib(nibName: ArticleTableViewCell.reuseId, bundle: nil),
+            forCellReuseIdentifier: ArticleTableViewCell.reuseId
+        )
+        tableView.tableFooterView = UIView()
+
         bind()
     }
 
     func bind() {
-        let searchInput = Observable.just("Trump")
+        
+        let searchInput = searchBar.rx.text.orEmpty
+        .filter { $0.count > 2 }
+        .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
+        .distinctUntilChanged()
 
         searchInput.subscribe(onNext: { value in
             self.viewModel.requestNews(for: value)
         })
             .disposed(by: disposeBag)
 
-        viewModel.news.bind(to:
-        tableView.rx.items(cellIdentifier: cellIdentifier)) { row, element, cell in
-            cell.textLabel?.text = "\(element.title)"
-            cell.detailTextLabel?.text = "\(element.publisher)"
+        viewModel.news.bind(to: tableView.rx.items(cellIdentifier: ArticleTableViewCell.reuseId, cellType: ArticleTableViewCell.self)) { row, element, cell in
+            cell.setupCell(with: element)
         }.disposed(by: disposeBag)
 
-        tableView.rx.modelSelected(String.self)
+        tableView.rx.modelSelected(NewsViewModel.ArticleDescription.self)
         .subscribe(onNext: { [unowned self] item in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let labelViewController = storyboard.instantiateViewController(withIdentifier: "labelViewController") as! LabelViewController
-            labelViewController.info = item
+            //labelViewController.info = item
             self.navigationController?.pushViewController(labelViewController, animated: true)
         }).disposed(by: disposeBag)
     }
