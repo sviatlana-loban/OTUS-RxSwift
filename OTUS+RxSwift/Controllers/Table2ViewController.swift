@@ -37,7 +37,7 @@ class Table2ViewController: UIViewController {
         .subscribe(onNext: { [unowned self] item in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let labelViewController = storyboard.instantiateViewController(withIdentifier: "labelViewController") as! LabelViewController
-            labelViewController.info = item
+            //labelViewController.info = item
             self.navigationController?.pushViewController(labelViewController, animated: true)
         }).disposed(by: disposeBag)
     }

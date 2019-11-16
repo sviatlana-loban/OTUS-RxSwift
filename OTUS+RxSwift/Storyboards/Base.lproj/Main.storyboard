@@ -93,8 +93,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzR-ji-LdO">
-                                <rect key="frame" x="174" y="98" width="66.5" height="33.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KzR-ji-LdO">
+                                <rect key="frame" x="10" y="98" width="394" height="33.5"/>
                                 <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
                                 <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -117,8 +117,10 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Gjv-Qs-uK7" firstAttribute="trailing" secondItem="osR-Wq-Nlz" secondAttribute="trailing" constant="10" id="0wf-2f-ins"/>
+                            <constraint firstItem="Gjv-Qs-uK7" firstAttribute="trailing" secondItem="KzR-ji-LdO" secondAttribute="trailing" constant="10" id="41Z-8Z-O8A"/>
                             <constraint firstItem="1um-ZM-RKM" firstAttribute="leading" secondItem="Gjv-Qs-uK7" secondAttribute="leading" constant="10" id="8Nt-cq-o0J"/>
                             <constraint firstItem="osR-Wq-Nlz" firstAttribute="leading" secondItem="Gjv-Qs-uK7" secondAttribute="leading" constant="10" id="9TQ-k4-R6d"/>
+                            <constraint firstItem="KzR-ji-LdO" firstAttribute="leading" secondItem="Gjv-Qs-uK7" secondAttribute="leading" constant="10" id="Jcr-ev-rsx"/>
                             <constraint firstItem="1um-ZM-RKM" firstAttribute="top" secondItem="KzR-ji-LdO" secondAttribute="bottom" constant="16.5" id="Jgk-zA-gJ7"/>
                             <constraint firstItem="KzR-ji-LdO" firstAttribute="top" secondItem="Gjv-Qs-uK7" secondAttribute="top" constant="10" id="MQe-SH-Jca"/>
                             <constraint firstItem="osR-Wq-Nlz" firstAttribute="top" secondItem="1um-ZM-RKM" secondAttribute="bottom" constant="16" id="P9w-ud-FlN"/>
@@ -130,7 +132,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="O4V-lb-KaW"/>
                     <connections>
-                        <outlet property="infoLabel" destination="KzR-ji-LdO" id="l7m-gn-4h8"/>
+                        <outlet property="infoLabel" destination="KzR-ji-LdO" id="NeP-xJ-KUV"/>
+                        <outlet property="newsDescription" destination="osR-Wq-Nlz" id="A1X-eh-ofv"/>
+                        <outlet property="newsImage" destination="1um-ZM-RKM" id="0h4-iy-CUB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1fj-Nd-9HM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

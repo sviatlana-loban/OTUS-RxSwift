@@ -46,12 +46,31 @@ class SearchNewsViewController: UIViewController {
             cell.setupCell(with: element)
         }.disposed(by: disposeBag)
 
-        tableView.rx.modelSelected(NewsViewModel.ArticleDescription.self)
-        .subscribe(onNext: { [unowned self] item in
+        _ = Observable
+        .zip(tableView.rx.itemSelected, tableView.rx.modelSelected(NewsViewModel.ArticleDescription.self))
+        .bind { [unowned self] indexPath, model in
+            self.tableView.deselectRow(at: indexPath, animated: false)
+
+            let cell = self.tableView.cellForRow(at: indexPath) as! ArticleTableViewCell
+            let articleInfo = ArticleInfo(title: model.title, description: model.description, image: cell.articleImage.image ?? UIImage())
+
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let labelViewController = storyboard.instantiateViewController(withIdentifier: "labelViewController") as! LabelViewController
-            //labelViewController.info = item
+            labelViewController.viewModel = NewsDescriptionViewModel(with: articleInfo)
+
             self.navigationController?.pushViewController(labelViewController, animated: true)
-        }).disposed(by: disposeBag)
+        }
+        .disposed(by: disposeBag)
+
+       // let smt = tableItemTapped.subscribe
+
+//        tableView.rx.modelSelected(NewsViewModel.ArticleDescription.self)
+//        .subscribe(onNext: { [unowned self] item in
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let labelViewController = storyboard.instantiateViewController(withIdentifier: "labelViewController") as! LabelViewController
+//            //let ar
+//            //labelViewController.viewModel = NewsDescriptionViewModel(with: ArticleInfo())
+//            self.navigationController?.pushViewController(labelViewController, animated: true)
+//        }).disposed(by: disposeBag)
     }
 }
