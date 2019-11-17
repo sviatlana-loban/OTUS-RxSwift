@@ -26,11 +26,11 @@
             </objects>
             <point key="canvasLocation" x="-99" y="259"/>
         </scene>
-        <!--Table 2-->
+        <!--Cats news-->
         <scene sceneID="QKs-mz-Psa">
             <objects>
                 <navigationController id="7M4-Uf-Pf3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table 2" id="x0O-3a-JD7"/>
+                    <tabBarItem key="tabBarItem" title="Cats news" id="x0O-3a-JD7"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BRN-y7-lKY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -43,16 +43,22 @@
             </objects>
             <point key="canvasLocation" x="719" y="919"/>
         </scene>
-        <!--Table2 View Controller-->
+        <!--Search Cats By Date View Controller-->
         <scene sceneID="Csp-Bd-WF8">
             <objects>
-                <viewController id="Zr9-tF-ss9" customClass="Table2ViewController" customModule="OTUS_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Zr9-tF-ss9" customClass="SearchCatsByDateViewController" customModule="OTUS_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D0C-sT-rD7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uqw-ch-Hym">
+                                <rect key="frame" x="10" y="88" width="394" height="44"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ysw-mf-gkh">
-                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <rect key="frame" x="0.0" y="305" width="414" height="508"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="table2Cell" id="gLc-mf-Qd2">
@@ -65,30 +71,40 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" id="SYp-13-qAK">
+                                <rect key="frame" x="0.0" y="132" width="414" height="173"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="gkY-PW-oSb" firstAttribute="trailing" secondItem="Uqw-ch-Hym" secondAttribute="trailing" constant="10" id="9ts-zz-Tg7"/>
                             <constraint firstItem="ysw-mf-gkh" firstAttribute="leading" secondItem="gkY-PW-oSb" secondAttribute="leading" id="ALJ-iL-HkW"/>
+                            <constraint firstItem="SYp-13-qAK" firstAttribute="top" secondItem="Uqw-ch-Hym" secondAttribute="bottom" id="BUl-RZ-OGS"/>
                             <constraint firstItem="gkY-PW-oSb" firstAttribute="trailing" secondItem="ysw-mf-gkh" secondAttribute="trailing" id="VhD-5R-oHY"/>
-                            <constraint firstItem="ysw-mf-gkh" firstAttribute="top" secondItem="gkY-PW-oSb" secondAttribute="top" id="iWO-Oy-jCr"/>
+                            <constraint firstItem="Uqw-ch-Hym" firstAttribute="top" secondItem="gkY-PW-oSb" secondAttribute="top" id="W6D-gd-9iy"/>
+                            <constraint firstItem="Uqw-ch-Hym" firstAttribute="leading" secondItem="gkY-PW-oSb" secondAttribute="leading" constant="10" id="hmS-5q-rnB"/>
+                            <constraint firstItem="ysw-mf-gkh" firstAttribute="top" secondItem="SYp-13-qAK" secondAttribute="bottom" id="iWO-Oy-jCr"/>
                             <constraint firstItem="gkY-PW-oSb" firstAttribute="bottom" secondItem="ysw-mf-gkh" secondAttribute="bottom" id="oel-2O-5eD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gkY-PW-oSb"/>
                     </view>
                     <navigationItem key="navigationItem" id="wkG-Go-bft"/>
                     <connections>
+                        <outlet property="dateLabel" destination="Uqw-ch-Hym" id="q9D-QQ-hc4"/>
+                        <outlet property="datePicker" destination="SYp-13-qAK" id="51q-aW-Rhl"/>
                         <outlet property="tableView" destination="ysw-mf-gkh" id="8Vd-UY-h3r"/>
                         <segue destination="8kx-YQ-hdp" kind="show" identifier="item2ShowLabelVC" id="m9e-IN-8o2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PyM-tL-MaN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1644" y="923"/>
+            <point key="canvasLocation" x="1643.4782608695652" y="922.76785714285711"/>
         </scene>
         <!--News Description View Controller-->
         <scene sceneID="Srz-m1-vFa">
             <objects>
-                <viewController storyboardIdentifier="labelViewController" id="8kx-YQ-hdp" customClass="NewsDescriptionViewController" customModule="OTUS_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="newsDescriptionViewController" id="8kx-YQ-hdp" customClass="NewsDescriptionViewController" customModule="OTUS_RxSwift" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MmX-R0-xgU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,6 +242,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZWC-py-0R1"/>
+        <segue reference="m9e-IN-8o2"/>
     </inferredMetricsTieBreakers>
 </document>

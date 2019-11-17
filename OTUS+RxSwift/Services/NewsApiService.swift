@@ -33,4 +33,21 @@ class NewsApiService {
             return news.articles
         }
     }
+
+    func search(date: Date) -> Observable<[News.Article]> {
+        let df = DateFormatter()
+        df.dateFormat = "MM-dd-yyyy"
+
+        let from = df.string(from: date)
+        let to = df.string(from: date)
+
+        let query = "cats"
+
+        let endpoint = NewsApiEndpoint.everything(query, from, to)
+        return networkManager.performRequest(with: endpoint).map {
+            let decoder = JSONDecoder()
+            let news = try decoder.decode(News.self, from: $0)
+            return news.articles
+        }
+    }
 }

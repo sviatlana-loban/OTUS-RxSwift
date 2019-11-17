@@ -14,7 +14,7 @@ enum NewsApiEndpoint: Endpoint {
     static let baseUrl = "https://newsapi.org/v2"
     static let apiKey = "f8453102cf7a4c79880c1de07fcfd2be"
 
-    case topHeadLines(_ country: String)
+    case topHeadLines(_ country: String, _ from: String, _ to: String)
     case sources(_ source: String)
     case everything(_ value: String, _ from: String, _ to: String)
 
@@ -39,8 +39,8 @@ enum NewsApiEndpoint: Endpoint {
             return [ "q": value, "from": from, "to": to].merging(requiredQueryParameters) { (current, _) in current }
         case .sources(let source):
             return [ "sources": source ].merging(requiredQueryParameters) { (current, _) in current }
-        case .topHeadLines(let country):
-            return [ "country": country ].merging(requiredQueryParameters) { (current, _) in current }
+        case .topHeadLines(let country, let from, let to):
+            return [ "country": country, "from": from, "to": to ].merging(requiredQueryParameters) { (current, _) in current }
         }
     }
 

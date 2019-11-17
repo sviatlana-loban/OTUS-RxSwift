@@ -12,7 +12,7 @@
 		843899B5237AA96700248147 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 843899B4237AA96700248147 /* Assets.xcassets */; };
 		843899B8237AA96700248147 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843899B6237AA96700248147 /* LaunchScreen.storyboard */; };
 		843899C3237AB2FD00248147 /* SearchNewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899C2237AB2FD00248147 /* SearchNewsViewController.swift */; };
-		843899C5237AB30B00248147 /* Table2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899C4237AB30B00248147 /* Table2ViewController.swift */; };
+		843899C5237AB30B00248147 /* SearchCatsByDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899C4237AB30B00248147 /* SearchCatsByDateViewController.swift */; };
 		843899C7237AC87A00248147 /* NewsDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899C6237AC87A00248147 /* NewsDescriptionViewController.swift */; };
 		843899F0237F20D100248147 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899EF237F20D100248147 /* News.swift */; };
 		843899F9237F2D9C00248147 /* NewsApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843899F4237F2D9C00248147 /* NewsApiService.swift */; };
@@ -38,7 +38,7 @@
 		843899B7237AA96700248147 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		843899B9237AA96700248147 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		843899C2237AB2FD00248147 /* SearchNewsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNewsViewController.swift; sourceTree = "<group>"; };
-		843899C4237AB30B00248147 /* Table2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table2ViewController.swift; sourceTree = "<group>"; };
+		843899C4237AB30B00248147 /* SearchCatsByDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCatsByDateViewController.swift; sourceTree = "<group>"; };
 		843899C6237AC87A00248147 /* NewsDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsDescriptionViewController.swift; sourceTree = "<group>"; };
 		843899EF237F20D100248147 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
 		843899F4237F2D9C00248147 /* NewsApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsApiService.swift; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				843899C2237AB2FD00248147 /* SearchNewsViewController.swift */,
-				843899C4237AB30B00248147 /* Table2ViewController.swift */,
+				843899C4237AB30B00248147 /* SearchCatsByDateViewController.swift */,
 				843899C6237AC87A00248147 /* NewsDescriptionViewController.swift */,
 			);
 			path = Controllers;
@@ -309,7 +309,7 @@
 			files = (
 				843899FB237F2D9C00248147 /* NetworkManager.swift in Sources */,
 				843899AC237AA96500248147 /* AppDelegate.swift in Sources */,
-				843899C5237AB30B00248147 /* Table2ViewController.swift in Sources */,
+				843899C5237AB30B00248147 /* SearchCatsByDateViewController.swift in Sources */,
 				843899FC237F2D9C00248147 /* Endpoint.swift in Sources */,
 				84389A0B238051DA00248147 /* NewsDescriptionViewModel.swift in Sources */,
 				84389A052380410400248147 /* ArticleTableViewCell.swift in Sources */,

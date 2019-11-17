@@ -1,5 +1,5 @@
 //
-//  SearchNewsViewController.swift
+//  SearchCatsByDateViewController.swift
 //  OTUS+RxSwift
 //
 //  Created by Sviatlana Loban on 11/12/19.
@@ -7,38 +7,49 @@
 //
 
 import UIKit
-import RxSwift
 import RxCocoa
+import RxSwift
 
-class SearchNewsViewController: UIViewController {
+class SearchCatsByDateViewController: UIViewController {
+
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
 
     let disposeBag = DisposeBag()
     let viewModel = NewsViewModel()
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Search news"
+        self.title = "Cats by date"
 
         tableView.register(
             UINib(nibName: ArticleTableViewCell.reuseId, bundle: nil),
             forCellReuseIdentifier: ArticleTableViewCell.reuseId
         )
         tableView.tableFooterView = UIView()
+        datePicker.maximumDate = Date()
 
         bind()
     }
 
     func bind() {
-        
-        let searchInput = searchBar.rx.text.orEmpty
-        .filter { $0.count > 2 }
-        .throttle(.milliseconds(500), scheduler: MainScheduler.instance)
-        .distinctUntilChanged()
 
-        searchInput.subscribe(onNext: { value in
-            self.viewModel.requestNews(for: value)
+        let _ = datePicker.rx.date.bind(to: viewModel.date)
+
+        viewModel.date
+            .asDriver(onErrorJustReturn: Date())
+            .map { d -> String in
+                let df = DateFormatter()
+                df.dateFormat = "dd MMMM YYYY"
+                return "Date: " + df.string(from: d)
+            }
+        .drive(dateLabel.rx.text)
+        .disposed(by: disposeBag)
+
+        viewModel.date.asObservable().subscribe(onNext: { date in
+            self.viewModel.requestNews(on: date)
         })
             .disposed(by: disposeBag)
 
@@ -61,16 +72,5 @@ class SearchNewsViewController: UIViewController {
             self.navigationController?.pushViewController(newsDescriptionViewController, animated: true)
         }
         .disposed(by: disposeBag)
-
-       // let smt = tableItemTapped.subscribe
-
-//        tableView.rx.modelSelected(NewsViewModel.ArticleDescription.self)
-//        .subscribe(onNext: { [unowned self] item in
-//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//            let labelViewController = storyboard.instantiateViewController(withIdentifier: "labelViewController") as! LabelViewController
-//            //let ar
-//            //labelViewController.viewModel = NewsDescriptionViewModel(with: ArticleInfo())
-//            self.navigationController?.pushViewController(labelViewController, animated: true)
-//        }).disposed(by: disposeBag)
     }
 }

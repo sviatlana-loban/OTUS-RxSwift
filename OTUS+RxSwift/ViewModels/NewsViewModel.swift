@@ -24,8 +24,24 @@ class NewsViewModel {
 
     private(set) var news: BehaviorRelay<[ArticleDescription]> = BehaviorRelay(value: [])
 
+    var date: BehaviorRelay<Date> = BehaviorRelay(value: Date())
+
     func requestNews(for value: String) {
         self.newsService.search(value: value)
+            .map{ articles in
+                var articleDescriptions = [ArticleDescription]()
+                for article in articles {
+                    articleDescriptions.append(ArticleDescription(title: article.title ?? "", publisher: article.source.name ?? "", description: article.description, imageUrl: article.urlToImage))
+                }
+                return articleDescriptions
+            }
+            .asDriver(onErrorJustReturn: [])
+            .drive(news)
+            .disposed(by: disposeBag)
+    }
+
+    func requestNews(on d: Date) {
+        self.newsService.search(date: d)
             .map{ articles in
                 var articleDescriptions = [ArticleDescription]()
                 for article in articles {
