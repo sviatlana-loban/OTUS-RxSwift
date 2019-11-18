@@ -35,4 +35,10 @@ class OTUS_RxSwiftTests: XCTestCase {
         XCTAssert(news.articles.count > 0, "Articles array not parsed")
     }
 
+    func test_StartDownload_Performance() {
+      measure {
+        self.newsViewModelUnderTest.requestNews(for: "Trump")
+      }
+    }
+
 }

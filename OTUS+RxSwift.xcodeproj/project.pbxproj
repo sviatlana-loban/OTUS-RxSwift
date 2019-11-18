@@ -27,11 +27,19 @@
 		84389A0B238051DA00248147 /* NewsDescriptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84389A0A238051DA00248147 /* NewsDescriptionViewModel.swift */; };
 		84443D2E23829B3A00FED05C /* OTUS_RxSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84443D2D23829B3A00FED05C /* OTUS_RxSwiftTests.swift */; };
 		84443D3623829C3D00FED05C /* news.json in Resources */ = {isa = PBXBuildFile; fileRef = 84443D3523829C3D00FED05C /* news.json */; };
+		84443D3E2382B74F00FED05C /* OTUS_RxSwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84443D3D2382B74F00FED05C /* OTUS_RxSwiftUITests.swift */; };
 		CE9F50E8B462685E6B3AE087 /* Pods_OTUS_RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB2A6FC02DCA773DBBAADF6 /* Pods_OTUS_RxSwift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		84443D3023829B3A00FED05C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 843899A0237AA96500248147 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 843899A7237AA96500248147;
+			remoteInfo = "OTUS+RxSwift";
+		};
+		84443D402382B74F00FED05C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 843899A0237AA96500248147 /* Project object */;
 			proxyType = 1;
@@ -67,6 +75,9 @@
 		84443D2D23829B3A00FED05C /* OTUS_RxSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTUS_RxSwiftTests.swift; sourceTree = "<group>"; };
 		84443D2F23829B3A00FED05C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		84443D3523829C3D00FED05C /* news.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = news.json; sourceTree = "<group>"; };
+		84443D3B2382B74F00FED05C /* OTUS+RxSwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "OTUS+RxSwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84443D3D2382B74F00FED05C /* OTUS_RxSwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTUS_RxSwiftUITests.swift; sourceTree = "<group>"; };
+		84443D3F2382B74F00FED05C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E385D077B2A14195EEB4B236 /* Pods-OTUS+RxSwift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OTUS+RxSwift.release.xcconfig"; path = "Target Support Files/Pods-OTUS+RxSwift/Pods-OTUS+RxSwift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +97,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84443D382382B74F00FED05C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -94,6 +112,7 @@
 			children = (
 				843899AA237AA96500248147 /* OTUS+RxSwift */,
 				84443D2C23829B3A00FED05C /* OTUS+RxSwiftTests */,
+				84443D3C2382B74F00FED05C /* OTUS+RxSwiftUITests */,
 				843899A9237AA96500248147 /* Products */,
 				DFA9F720ACD61CE786C6D8B5 /* Pods */,
 				DC3DCB2804CCD8461F24FB51 /* Frameworks */,
@@ -105,6 +124,7 @@
 			children = (
 				843899A8237AA96500248147 /* OTUS+RxSwift.app */,
 				84443D2B23829B3A00FED05C /* OTUS+RxSwiftTests.xctest */,
+				84443D3B2382B74F00FED05C /* OTUS+RxSwiftUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -209,6 +229,15 @@
 			path = "OTUS+RxSwiftTests";
 			sourceTree = "<group>";
 		};
+		84443D3C2382B74F00FED05C /* OTUS+RxSwiftUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84443D3D2382B74F00FED05C /* OTUS_RxSwiftUITests.swift */,
+				84443D3F2382B74F00FED05C /* Info.plist */,
+			);
+			path = "OTUS+RxSwiftUITests";
+			sourceTree = "<group>";
+		};
 		DC3DCB2804CCD8461F24FB51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +295,24 @@
 			productReference = 84443D2B23829B3A00FED05C /* OTUS+RxSwiftTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		84443D3A2382B74F00FED05C /* OTUS+RxSwiftUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84443D422382B74F00FED05C /* Build configuration list for PBXNativeTarget "OTUS+RxSwiftUITests" */;
+			buildPhases = (
+				84443D372382B74F00FED05C /* Sources */,
+				84443D382382B74F00FED05C /* Frameworks */,
+				84443D392382B74F00FED05C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84443D412382B74F00FED05C /* PBXTargetDependency */,
+			);
+			name = "OTUS+RxSwiftUITests";
+			productName = "OTUS+RxSwiftUITests";
+			productReference = 84443D3B2382B74F00FED05C /* OTUS+RxSwiftUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -280,6 +327,10 @@
 						CreatedOnToolsVersion = 11.1;
 					};
 					84443D2A23829B3A00FED05C = {
+						CreatedOnToolsVersion = 11.2.1;
+						TestTargetID = 843899A7237AA96500248147;
+					};
+					84443D3A2382B74F00FED05C = {
 						CreatedOnToolsVersion = 11.2.1;
 						TestTargetID = 843899A7237AA96500248147;
 					};
@@ -300,6 +351,7 @@
 			targets = (
 				843899A7237AA96500248147 /* OTUS+RxSwift */,
 				84443D2A23829B3A00FED05C /* OTUS+RxSwiftTests */,
+				84443D3A2382B74F00FED05C /* OTUS+RxSwiftUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -321,6 +373,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84443D3623829C3D00FED05C /* news.json in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84443D392382B74F00FED05C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,6 +457,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84443D372382B74F00FED05C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84443D3E2382B74F00FED05C /* OTUS_RxSwiftUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -405,6 +472,11 @@
 			isa = PBXTargetDependency;
 			target = 843899A7237AA96500248147 /* OTUS+RxSwift */;
 			targetProxy = 84443D3023829B3A00FED05C /* PBXContainerItemProxy */;
+		};
+		84443D412382B74F00FED05C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 843899A7237AA96500248147 /* OTUS+RxSwift */;
+			targetProxy = 84443D402382B74F00FED05C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -624,6 +696,46 @@
 			};
 			name = Release;
 		};
+		84443D432382B74F00FED05C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 76UWPS59U6;
+				INFOPLIST_FILE = "OTUS+RxSwiftUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "by.sloban.OTUS-RxSwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "OTUS+RxSwift";
+			};
+			name = Debug;
+		};
+		84443D442382B74F00FED05C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 76UWPS59U6;
+				INFOPLIST_FILE = "OTUS+RxSwiftUITests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "by.sloban.OTUS-RxSwiftUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "OTUS+RxSwift";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -650,6 +762,15 @@
 			buildConfigurations = (
 				84443D3223829B3A00FED05C /* Debug */,
 				84443D3323829B3A00FED05C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84443D422382B74F00FED05C /* Build configuration list for PBXNativeTarget "OTUS+RxSwiftUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84443D432382B74F00FED05C /* Debug */,
+				84443D442382B74F00FED05C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
