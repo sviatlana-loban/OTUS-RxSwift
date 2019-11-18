@@ -1,5 +1,5 @@
 # OTUS-RxSwift
-Simple RxSwift for week 26 task
+Simple RxSwift Unit and UI tests for week 29 task
 
-Please use navigation_stack branch.\
+Please use testing branch.\
 Please do not forget to run "pod install" command before opening the project
